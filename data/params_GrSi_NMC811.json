@@ -1,0 +1,100 @@
+{
+    "constants": {
+        "R": {"unit": "J/K mol", "value": 8.314472},
+        "F": {"unit": "A/mol", "value": 96485.3365},
+        "alpha": {"unit": "-", "value": 0.5}
+    },
+    "properties": {
+        "heatConvection": {"unit": "W/m^2 K", "value": 0}
+    },
+    "negativeCurrentCollector": {
+        "name": "Cu",
+        "thickness": {"unit": "m", "value": 10e-06},
+        "area": {"unit": "m^2", "value": 0.002397},
+        "density": {"unit": "kg/m3", "notes": "taken from literature","value": 8960},
+        "specificHeat": {"unit": "J/kg K", "notes": "taken from literature", "value": 385.0},
+        "thermalConductivity": {"unit": "W/mK", "value": 398},
+        "electronicConductivity": {"unit": "S/m", "value": 5.8e7}
+    },
+    "negativeElectrode": {
+        "name": "Graphite-Silicon",
+        "thickness": {"unit": "m", "value": 110e-6},
+        "area": {"unit": "m^2", "value": 2.1642e-4},
+        "porosity": {"unit": "-", "value": 0.56},
+        "tortuosity": {"unit": "-", "value": 3},
+        "electronicConductivity": {"unit": "S/m", "value": 30},
+        "active_materials": 
+        [
+          {
+            "volFrac_active": {"unit": "-", "value": 0.4},
+            "particleRadius": {"unit": "m", "value": 8.21e-6},
+            "stoichiometry1": {"unit": "-", "value": 0.88},
+            "stoichiometry0": {"unit": "-", "value": 0.139},
+            "kineticConstant": {"unit": "m^2.5/mol^0.5 s", "value": 1e-11},
+            "maximumConcentration": {"unit": "mol/m3", "value": 35000},
+            "diffusionConstant": {
+                "unit": "m^2/s", 
+                "value": 4e-14,
+                "_value": "10**(27.243*x**4-58.965*x**3+46.455*x**2-17.112*x-11.947)"},
+            "openCircuitPotential": {
+                "unit": ["-", "V"], 
+                "type": "spline", 
+                "spline_type": "not-a-knot", 
+                "source": "file", 
+                "_value": "OCV_GrSi_discharge.txt",
+                "value": "pOCV_C20_ch_GrSi.txt"
+            }
+          }
+        ]
+    },
+    "separator": {
+        "name": "Celgard",
+        "thickness": {"unit": "m", "value": 20e-6},
+        "area" : {"unit": "m^2", "value": 2.1642e-4},
+        "porosity": {"unit": "-", "value": 0.46},
+        "bruggeman": {"unit": "-", "value": 1.5}
+    },
+    "positiveElectrode": {
+        "name": "NMC811",
+        "thickness": {"unit": "m", "value": 70e-6},
+        "area" : {"unit": "m^2", "value": 2.1642e-4},
+        "porosity": {"unit": "-", "value": 0.31},
+        "tortuosity": {"unit": "-", "value": 2},
+        "electronicConductivity": {"unit": "S/m", "value": 0.5},
+        "active_materials": 
+        [
+            {
+            "volFrac_active": {"unit": "-", "value": 0.524},
+            "particleRadius": {"unit": "m", "value": 5.34e-6},
+            "stoichiometry1": {"unit": "-", "value": 0.32},
+            "stoichiometry0": {"unit": "-", "value": 0.99},
+            "kineticConstant": {"unit": "m^2.5/mol^0.5 s", "value": 1e-11},
+            "maximumConcentration": {"unit": "mol/m3", "value": 50060, "_value": 43451},
+            "diffusionConstant": {"unit": "m^2/s", "value": 1e-14},
+            "openCircuitPotential": {
+                "unit": ["-", "V"], 
+                "type": "spline", 
+                "spline_type": "not-a-knot", 
+                "_value": "OCV_NMC811.txt",
+                "value": "pOCV_C20_dch_NMC811.txt"}
+            }
+        ]
+    },
+    "positiveCurrentCollector": {
+        "name": "Al",
+        "thickness": {"unit": "m", "value": 15e-06},
+        "area" : {"unit": "m^2", "value": 2.1642e-4},
+        "density": {"unit": "kg/m3", "notes": "taken from literature","value": 2700},
+        "specificHeat": {"unit": "J/kg K", "notes": "taken from literature", "value": 900.0},
+        "thermalConductivity": {"unit": "W/mK", "value": 205},
+        "electronicConductivity": {"unit": "S/m", "value": 3.77e7}
+    },
+    "electrolyte": {
+        "name": "LiPF6",
+        "diffusionConstant": {"unit": "m^2/s", "effective":false, "correction":"tortuosity", "value": 8.59e-10, "arrhenius":{"activationEnergy": 14753,"referenceTemperature":298 }},
+        "ionicConductivity": {"unit": "S/m", "effective":false, "correction":"tortuosity", "value": 0.908, "arrhenius":{"activationEnergy": 4395,"referenceTemperature":298 }},
+        "transferenceNumber": {"unit": "-", "value": 0.23},
+        "initialConcentration": {"unit": "mol/m3", "value": 1000}
+    },
+    "structure": ["a","s","c"]
+}
