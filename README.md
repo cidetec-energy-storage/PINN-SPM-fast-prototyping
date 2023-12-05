@@ -1,7 +1,7 @@
 # PINN-SPM-fast-prototyping
 Welcome to Single Particle Model PINN for fast prototyping!
 
-I am a physics-informed neural network trained to provide the evolution of lithium concentration in active material particles in both electrodes during a discharge process as well as the discharge curve of the full battery, based in the Single Particle Model.
+I am a physics-informed neural network trained to provide the evolution of lithium concentration in active material particles in both electrodes during a discharge process as well as the discharge curve of the full battery, based on the Single Particle Model.
 
 In general, I am trained using NMC811 G-Si chemistry and in a wide range of geometrical parameters and C-rates:
 - Negative electrode thickness in [5e-5, 2e-4] m
