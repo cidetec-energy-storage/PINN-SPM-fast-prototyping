@@ -23,4 +23,7 @@ My inputs are:
 And my outputs are:
 - Lithium concentration in negative electrode ($c_{s,NE}$ in mol/m**3) along the radius in the negative particle ($r_{NE}$ in meters) for an instant of time ($t$ in seconds)
 - Lithium concentration in positive electrode ($c_{s,PE}$ in mol/m**3) along the radius in the positive particle ($r_{PE}$ in meters) for an instant of time ($t$ in seconds)
-- Battery voltage ($V$ in volts) for an instant of time ($t$ in seconds). 
+- Battery voltage ($V$ in volts) for an instant of time ($t$ in seconds).
+
+## License
+This software is copyright (C) 2023 of CIDETEC Energy Storage and is distributed under the terms of the Affero GNU General Public License (GPL) version 3 or later.
